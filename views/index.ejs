@@ -1,0 +1,102 @@
+<%- include('parts/html_head') %> 
+<%- include('parts/html_navbar') %> 
+
+<img src="office.jpg" alt="Workplace" usemap="#workmap" width="800" height="800",style="position: relative;">
+
+<map name="workmap" >
+  <area shape="rect" coords="230,140,345,208" alt="桌子" href="#" id='area1' >
+  <area shape="rect" coords="325,335,380,400" alt="沙發" href="#" id='sofa1' >
+  <table class="table" style="display: none;position:absolute;" id = 'tb'>
+    <thead>
+      <tr class="table-success">
+        <th>#</th><th>名稱</th><th>狀態</th><th>備註</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr class="table-warning" id = 'tr1'> 
+        <td >1 </td><td>TB - Monthly</td><td>01/04/2012</td><td>Default</td>
+      </tr>
+      <tr class="table-danger" id = 'tr2'>
+        <td>1</td><td>TB - Monthly</td><td>01/04/2012</td><td>Approved</td>
+      </tr>
+      <tr class="table-success" id = 'tr3'> 
+        <td>2</td><td>TB - Monthly</td><td>02/04/2012</td> <td>Declined</td>
+      </tr>
+      <tr class="table-warning" id = 'tr4'>
+        <td>3</td><td>TB - Monthly</td><td>03/04/2012</td><td>Pending</td>
+      </tr>
+      <tr class="table-danger" id ='tr5'>
+        <td> 4</td><td>TB - Monthly</td><td>04/04/2012</td><td>Call in to confirm</td>
+      </tr> -->
+    </tbody>
+
+  </table>
+</map>
+<%- include('parts/html_script') %>
+<script>
+
+	$(function(){
+    $("#area1").on({
+      mouseenter:function(){
+        var x = event.clientX + document.body.scrollLeft + 20;
+		   	var y = event.clientY + document.body.scrollTop - 5; 
+        $("#tb").css('left',x+'px');
+	      $("#tb").css('top',y+'px');
+        $("#tb").css('display','block'); 
+        var data = {id:"speed"}; //傳前端的參數
+        $.ajax({
+         type:'get',
+         url:'/try-db',
+         dataType:'json',
+         data: data,     //前端 用req.query.屬性 取值即可！
+         timeout: 5000,
+         contentType: "application/json; charset=utf-8",
+         success:function(res){
+            
+            $("tbody").append("<tr class='table-warning'><td>"+res.item+"</td><td>"+res.info+"</td><td>"+res.time+"</td><td>"+res.other+"</td></tr>");
+         },
+         error:function(error){
+            console.log('錯誤: '+error);
+         }
+        });   
+      },
+      mouseleave:function(){
+        $("tbody tr").remove();
+        $("#tb").css('display','none'); 
+      }
+      });
+
+      $("#sofa1").on({
+      mouseenter:function(){
+        var x = event.clientX + document.body.scrollLeft + 20;
+		   	var y = event.clientY + document.body.scrollTop - 5; 
+        $("#tb").css('left',x+'px');
+	      $("#tb").css('top',y+'px');
+        $("#tb").css('display','block'); 
+        var data = {id:"Feedrate"}; //傳前端的參數
+        $.ajax({
+         type:'get',
+         url:'/try-db',
+         dataType:'json',
+         data: data,     //前端 用req.query.屬性 取值即可！
+         timeout: 5000,
+         contentType: "application/json; charset=utf-8",
+         success:function(res){
+            
+            $("tbody").append("<tr class='table-warning'><td>"+res.item+"</td><td>"+res.info+"</td><td>"+res.time+"</td><td>"+res.other+"</td></tr>");
+         },
+         error:function(error){
+            console.log('錯誤: '+error);
+         }
+        });   
+      },
+      mouseleave:function(){
+        $("tbody tr").remove();
+        $("#tb").css('display','none'); 
+      }
+      });
+     
+    
+  });
+</script>
+<%- include('parts/html_foot') %>  
