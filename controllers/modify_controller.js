@@ -2,12 +2,13 @@ const toRegister = require('../models/register_model');
 const LoginAction = require('../models/login_model');
 const Check = require('../service/member_check');
 const encryption = require('../models/encryption');
-
+const config = require('../config/development_config');
+const jwt = require('jsonwebtoken');
 check = new Check();
 
 module.exports = class Member { 
     // 處理會員註冊的function
-    postRegister(req, res, next){
+    postRegister(req, res){
         //密碼加密
         const password = encryption(req.body.password);
         // console.log(password)
@@ -20,6 +21,7 @@ module.exports = class Member {
         }
         // 檢查 email格式是否正確
         const checkEmail = check.checkemail(memberData.email);
+        
         if (checkEmail === false) {
             res.json({
                 result:{
@@ -27,8 +29,9 @@ module.exports = class Member {
                    err    : "請輸入正確的E-mail格式"
                 }
             })
-        }else if (check === true){
+        }else if (checkEmail === true){
             // 將資料寫入資料庫
+            console.log(memberData)
             toRegister(memberData).then(result=>{
                 res.json({
                         status:"註冊成功。",
@@ -42,13 +45,14 @@ module.exports = class Member {
         }    
     }
     // 處理會員登入的function
-    postLogin(req, res, next){ 
+    postLogin(req, res){ 
         const password = encryption(req.body.password);
 
         const memberData = {
             name: req.body.name,
             password: password,    //加密後的密碼
         }
+        console.log('登入會員：',memberData.name , '加密後密碼：',memberData.password);
         LoginAction(memberData).then(rows =>{
             if (check.checkNull(rows)===true){
                 res.json({
@@ -59,10 +63,15 @@ module.exports = class Member {
                 })
             }else if(check.checkNull(rows)===false){
                 // 產生token
+                const token = jwt.sign({
+                    algorithm: 'HS256',
+                    exp: Math.floor(Date.now() / 1000) + (60 * 60), // token一個小時後過期。
+                    data: rows[0].id
+                }, config.secret);
                 res.json({
                     result:{
                         status: "登入成功。",
-                        loginMember: "歡迎 "+ rows[0].name + "的登入！"
+                        loginMember: "歡迎 "+ rows[0].name + " 的登入！",
                     }
                 })
             }

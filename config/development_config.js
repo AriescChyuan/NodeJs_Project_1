@@ -3,7 +3,7 @@ require('dotenv').config()
 //而想要集中在 .env 檔中管理它，所以有大神寫了 dotenv , 可以在程式一開始就載入所有的環境變數。
 
 module.exports = {
-    mariadb: {
+  mysql: {
       host: process.env.HOST,
       user: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,

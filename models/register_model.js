@@ -2,7 +2,7 @@ const db = require('./connection_db');
 
 module.exports = function register(memberData){
     let result ={};
-    let sqlVal = [memberData.name, memberData.email, memberData.password, memberData.create_date];
+    // let sqlVal = [memberData.name, memberData.email, memberData.password, memberData.create_date];
     
     return new Promise((resolve, rejected)=>{
          // 搜尋是否有重複的email
@@ -24,7 +24,7 @@ module.exports = function register(memberData){
              }
              else{
                  // 將資料寫入資料庫
-                db.query('INSERT INTO member_info SET name =?, email=?, password=?, create_date =?',sqlVal, function(err, rows){
+                db.query('INSERT INTO member_info SET ?',memberData, function(err, rows){
                     //寫入資料庫失敗
                     if (err) {
                         console.log(err);

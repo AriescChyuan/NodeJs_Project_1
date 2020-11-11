@@ -17,6 +17,7 @@
     "ffmpeg": "^0.0.4",
     "fluent-ffmpeg": "^2.1.2",
     "jsonwebtoken": "^8.5.1",
-    "mariadb": "^2.5.1"
+    "mariadb": "^2.5.1",
+    "mysql": "^2.18.1"
   }
 }
