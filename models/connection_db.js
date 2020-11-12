@@ -1,4 +1,4 @@
-var mysql = require('mysql'); //資料庫
+var mysql = require('mysql'); 
 const config = require('../config/development_config');
 
 const connection = mysql.createConnection({
