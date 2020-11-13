@@ -15,9 +15,14 @@ app.set('view engine', 'ejs');
 module.exports = class Member { 
     // 處理會員註冊的function
     postRegister(req, res){
-        console.log(req.body)
+        // console.log(req.body)
+        //檢查 輸入的密碼跟再次輸入的密碼是否相同
+        if(req.body.password1 != req.body.password2){
+            res.render('../views/register', {status: "註冊失敗。",err: "密碼輸入不一致"})
+            console.log('ok')
+        }
         //密碼加密
-        const password = encryption(req.body.password);
+        const password = encryption(req.body.password1);
         // console.log(password)
         //獲取Client端post來的“欲新增”的會員資料
         const memberData = {
@@ -47,11 +52,11 @@ module.exports = class Member {
                 //         results: result
                 //     })
                 res.render('../views/login',{status:'註冊成功，請重新登入。',loginMember:''})
-            }),(err)=>{
+            }).catch((err)=>{
                 res.json({
                     results: err
                 })
-            }    
+            })
         }    
     }
     // 處理會員登入的function

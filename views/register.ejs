@@ -1,22 +1,25 @@
 <%- include('parts/html_head') %> 
-<div>
+<div class="container">
     <form action="http://127.0.0.1:3000/register", method="POST">
             <div class="form-group">
-                <label for="exampleInputPassword1">Name</label>
+                <label for="exampleInputPassword1">帳號</label>
                 <input type="name" class="form-control"  name='name'>
               </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control"  name='password'>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email地址</label>
                 <input type="text" class="form-control"  aria-describedby="emailHelp" name='email'>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
               </div>
-            
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="reset" class="btn btn-primary">reset</button>
+            <div class="form-group">
+              <label for="exampleInputPassword1">請輸入密碼</label>
+              <input type="password" class="form-control"  name='password1'>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">再次輸入密碼</label>
+              <input type="password" class="form-control"  name='password2'>
+            </div>
+            <button type="submit" class="btn btn-primary">完成</button>
+            <button type="reset" class="btn btn-primary">清除</button>
           </form>
           <%= status %><%= err %>
           

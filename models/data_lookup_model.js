@@ -1,11 +1,11 @@
-// const { promiseImpl } = require('ejs');
+
 const db = require('./connection_db');
 
-module.exports = function LookUpData(id){
+module.exports = function LookUpData(req){
     let result = {};
     return new Promise((resolve, reject)=>{
-        
-        db.query('SELECT * FROM machine WHERE item = ?', 'speed', function(err, results){
+        //SELECT * FROM machine WHERE item = ?'
+        db.query('SELECT * FROM machine',req, function(err, results){
             // console.log(err);
             if(err){
                 result.status = '資料搜尋失敗。';

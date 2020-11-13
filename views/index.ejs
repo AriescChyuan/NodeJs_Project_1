@@ -1,69 +1,59 @@
 <%- include('parts/html_head') %> 
+<div class='container' >
+<div id="login_message" class="alert alert-success"><%= loginMember %></div>
 
-<div><%= loginMember %></div>
-<img src="rice_layout.jpg" alt="Workplace" usemap="#workmap" width="1400" height="700",style="position: relative;">
-
+<img src="rice_layout.jpg" alt="Workplace" usemap="#workmap"  height="700">
 <map name="workmap" >
-  <area shape="rect" coords="240,100,260,150" alt="粗選機1" href="#" id='choose1' >
-  <area shape="rect" coords="275,100,295,150" alt="粗選機2" href="#" id='choose2' >
-  <area shape="rect" coords="315,100,335,150" alt="粗選機3" href="#" id='choose3' >
-  <area shape="rect" coords="240,345,260,395" alt="粗選機1" href="#" id='choose4' >
-  <area shape="rect" coords="280,345,300,395" alt="粗選機2" href="#" id='choose5' >
-  <area shape="rect" coords="315,345,335,395" alt="粗選機3" href="#" id='choose6' >
-  <!-- <area shape="rect" coords="325,335,380,400" alt="沙發" href="#" id='sofa1' > -->
+  <area shape="rect" coords="227,100,260,150" alt="粗選機1" href="#" id='choose1' >
+  <area shape="rect" coords="264,100,300,150" alt="粗選機2" href="#" id='choose2' >
+  <area shape="rect" coords="302,100,339,150" alt="粗選機3" href="#" id='choose3' >
+  <area shape="rect" coords="229,345,260,395" alt="粗選機1" href="#" id='choose4' >
+  <area shape="rect" coords="266,345,300,395" alt="粗選機2" href="#" id='choose5' >
+  <area shape="rect" coords="304,345,340,395" alt="粗選機3" href="#" id='choose6' >
+  <area shape="rect" coords="380,85,404,193" alt="流量計1" href="#" id='' >
+  <!-- 燈號 -->
+  <div id='light1'></div>
+  <div id='light2'></div>
+  <div id='light3'></div>
+  <div id='light4'></div>
+  <div id='light5'></div>
+  <div id='light6'></div>
+  <!-- 動態表格 -->
   <table class="table" style="display: none;position:absolute;" id = 'tb'>
-    <thead>
-      <tr class="table-success">
-        <th>#</th><th>名稱</th><th>狀態</th><th>備註</th>
+    <thead class="table-success thead-dark">
+      <tr>
+        <th>名稱</th><th>數值</th><th>時間</th><th>其他</th>
       </tr>
     </thead>
-    <tbody>
-      <!-- <tr class="table-warning" id = 'tr1'> 
-        <td >1 </td><td>TB - Monthly</td><td>01/04/2012</td><td>Default</td>
-      </tr>
-      <tr class="table-danger" id = 'tr2'>
-        <td>1</td><td>TB - Monthly</td><td>01/04/2012</td><td>Approved</td>
-      </tr>
-      <tr class="table-success" id = 'tr3'> 
-        <td>2</td><td>TB - Monthly</td><td>02/04/2012</td> <td>Declined</td>
-      </tr>
-      <tr class="table-warning" id = 'tr4'>
-        <td>3</td><td>TB - Monthly</td><td>03/04/2012</td><td>Pending</td>
-      </tr>
-      <tr class="table-danger" id ='tr5'>
-        <td> 4</td><td>TB - Monthly</td><td>04/04/2012</td><td>Call in to confirm</td>
-      </tr> -->
-    </tbody>
-
+     <tbody>
+     </tbody>
   </table>
 </map>
+
+</div>
 <%- include('parts/html_script') %>
 <script>
-
+  
 	$(function(){
+    //燈控
+    lightControl('#light1','#choose1','greenyellow')  
+    lightControl('#light2','#choose2','greenyellow')  
+    lightControl('#light3','#choose3','red')  
+    lightControl('#light4','#choose4','greenyellow')  
+    lightControl('#light5','#choose5','red')
+    lightControl('#light6','#choose6','red')  
+    // for(let i=1; i<=6 ; i++){
+    //   lightControl('#light'+i, '#choose'+i, 'red')
+    // }
+
+    // 獲取當前滑鼠座標 用來設定area座標用。
+    $(document).mousemove((e)=>{
+      console.log(getMousePos(e))
+    });
+    
     $("#choose1").on({
       mouseenter:function(){
-        var x = event.clientX + document.body.scrollLeft + 5;
-		   	var y = event.clientY + document.body.scrollTop - 5; 
-        $("#tb").css('left',x+'px');
-	      $("#tb").css('top',y+'px');
-        $("#tb").css('display','block'); 
-        var data_id= "speed"; //傳前端的參數
-        $.ajax({
-         type:'get',
-         url:'/getMachineData',
-         dataType:'json',
-         data: data_id,     //前端 用req.query.屬性 取值即可！
-         timeout: 5000,
-         contentType: "application/json; charset=utf-8",
-         success:function(res){
-            // console.log('ejs:',res[0])
-            $("tbody").append("<tr class='table-warning'><td>"+res[0].item+"</td><td>"+res[0].info+"</td><td>"+res[0].time+"</td><td>"+res[0].other+"</td></tr>");
-         },
-         error:function(error){
-            console.log('錯誤: '+error);
-         }
-        });   
+        InfoScreen('speed')
       },
       mouseleave:function(){
         $("tbody tr").remove();
@@ -71,36 +61,71 @@
       }
       });
 
-      $("#sofa1").on({
+      $("#choose2").on({
       mouseenter:function(){
-        var x = event.clientX + document.body.scrollLeft + 20;
-		   	var y = event.clientY + document.body.scrollTop - 5; 
-        $("#tb").css('left',x+'px');
-	      $("#tb").css('top',y+'px');
-        $("#tb").css('display','block'); 
-        var data = {id:"Feedrate"}; //傳前端的參數
-        $.ajax({
-         type:'get',
-         url:'/try-db',
-         dataType:'json',
-         data: data,     //前端 用req.query.屬性 取值即可！
-         timeout: 5000,
-         contentType: "application/json; charset=utf-8",
-         success:function(res){
-            
-            $("tbody").append("<tr class='table-warning'><td>"+res.item+"</td><td>"+res.info+"</td><td>"+res.time+"</td><td>"+res.other+"</td></tr>");
-         },
-         error:function(error){
-            console.log('錯誤: '+error);
-         }
-        });   
+        InfoScreen('feedrate')
       },
       mouseleave:function(){
         $("tbody tr").remove();
         $("#tb").css('display','none'); 
       }
       });
-     
+
+      $("#choose3").on({
+      mouseenter:function(){
+        InfoScreen('feedrate')
+      },
+      mouseleave:function(){
+        $("tbody tr").remove();
+        $("#tb").css('display','none'); 
+      }
+      });
+
+/////////////////// 自訂功能 /////////////////////////////////////////////////////////
+
+      //動態表格視窗(顯示資料庫資料)Function
+      function InfoScreen(machineId){
+        var rowColor = ['primary','success','danger','warning','info','light','dark','primary','success','danger','warning','info','light','dark']
+        var x = event.clientX + document.body.scrollLeft + 10;
+		   	var y = event.clientY + document.body.scrollTop ; 
+        $("#tb").css('left',x+'px');
+	      $("#tb").css('top',y+'px');
+        $("#tb").css('display','block'); 
+  
+        fetch('/getMachineData/'+machineId,{
+          method:'GET',
+        }).then(res=>{
+          return res.json()
+        }).then(data=>{
+            for(let i=0 ; i<data.length; i++){
+              $("tbody").append("<tr class='table-"+rowColor[i]+"'" + "><td>"+data[i].item+"</td><td>"+data[i].info+"</td><td>"+data[i].time+"</td><td>"+data[i].other+"</td></tr>");
+            }
+        }).catch((err) => {
+           console.log('錯誤:', err);
+        }); 
+      }
+
+      //獲取滑鼠座標位置的Function
+      function getMousePos(e){
+       var y_extra = $('#login_message').height()
+      //  console.log('y_extra: ',y_extra)
+       var e = event || window.event;
+       var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
+       var scrollY = document.documentElement.scrollTop || document.body.scrollTop;
+       var x = e.pageX || e.clientX + scrollX;
+       var y = e.pageY || e.clientY + scrollY;
+       return {'X: ': x,'Y: ' : y-y_extra}
+     }
+
+     // 燈號放置位置及顏色設定 功能
+     function lightControl(lightID,machineId, Color){
+      var label = $(machineId)
+      var coords = label.attr('coords').split(',')
+      var x = parseInt(coords[0]) + 8
+      var y = parseInt(coords[3]) + 30
+      // console.log('x:',x ,'y: ',y)
+      $(lightID).addClass('light').css('left',x+'px').css('top',y+'px').css('background',Color)
+      }
     
   });
 </script>
