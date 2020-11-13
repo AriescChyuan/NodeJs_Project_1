@@ -35,7 +35,7 @@ module.exports = function register(memberData){
                     }
                     //寫入資料庫成功
                       console.log('寫入資料庫成功')
-                      result.registerMember = memberData;
+                      result = memberData;
                       resolve(result)
               });
              }

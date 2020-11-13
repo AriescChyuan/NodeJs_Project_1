@@ -51,7 +51,9 @@ module.exports = class Member {
                 //         status:"註冊成功。",
                 //         results: result
                 //     })
-                res.render('../views/login',{status:'註冊成功，請重新登入。',loginMember:''})
+                // res.render('../views/login',{status:'註冊成功，請重新登入。',loginMember:''})
+    
+                res.render('../views/index.ejs',{loginMember: "歡迎 "+ result.name + " 的登入！"});
             }).catch((err)=>{
                 res.json({
                     results: err
@@ -76,7 +78,7 @@ module.exports = class Member {
                 //         loginMember: "請輸入正確的帳號密碼。"
                 //     }
                 // })
-                res.render('../views/login.ejs',{status:"登入失敗!", loginMember: "請輸入正確的帳號密碼。"});
+                res.render('../views/login.ejs',{status:"登入失敗!", err: "請輸入正確的帳號密碼。"});
             }else if(check.checkNull(rows)===false){
                 // 產生token
                 const token = jwt.sign({

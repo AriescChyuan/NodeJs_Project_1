@@ -8,7 +8,7 @@ memberModifyMethod = new MemberModifyMethod();
 machineDataMethod = new MachineDataMethod();
 //進入頁面
 router.get('/',(req,res)=>{
-    res.render('login',{status:"", loginMember:""});
+    res.render('login',{status:"", loginMember:"", err:""});
 });
 //註冊頁面
 router.get('/registerPage',(req,res)=>{  
