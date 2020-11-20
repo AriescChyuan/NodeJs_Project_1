@@ -21,6 +21,6 @@ router.post('/login',memberModifyMethod.postLogin);
 router.put('/update',memberModifyMethod.postUpdate);
 
 //// 取得機台資訊
-router.get('/getMachineData/:item',machineDataMethod.lookupdata);
+router.get('/getMachineData/:table/:id',machineDataMethod.lookupdata);
 
 module.exports = router;

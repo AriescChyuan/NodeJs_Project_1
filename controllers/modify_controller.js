@@ -78,7 +78,7 @@ module.exports = class Member {
                 //         loginMember: "請輸入正確的帳號密碼。"
                 //     }
                 // })
-                res.render('../views/login.ejs',{status:"登入失敗!", err: "請輸入正確的帳號密碼。"});
+                res.render('../views/login.ejs',{status:"登入失敗!", err: "請輸入正確的帳號密碼。",loginMember:'請輸入正確的帳號密碼。'});
             }else if(check.checkNull(rows)===false){
                 // 產生token
                 const token = jwt.sign({

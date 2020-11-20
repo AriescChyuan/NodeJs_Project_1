@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://blog.shihshih.com/responsive-image-map/ -->
+<html lang="zh-TW" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><!--<![endif]--><!-- begin head --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/recaptcha__zh_tw.js" crossorigin="anonymous" integrity="sha384-R1GIQRp0dp5D/xY/owSuKhRFV6/0X5E1WHmCD2tjVoZ2v7cRy/uIffVRAjodPUVF"></script>
+
+	
+
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+	<title>如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best</title>
+
+
+
+	<!-- begin meta -->
+
+	<meta name="viewport" content="width=device-width">
+
+	
+	<!-- end meta -->
+
+
+
+	<!-- main stylesheet -->
+
+	<link rel="stylesheet" media="all" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/style.css">
+
+	<!-- main stylesheet -->
+
+
+
+
+
+<!--//################################# Begin Custom Typography #################################//-->
+
+
+
+<link href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/css" rel="stylesheet" type="text/css">
+
+
+
+
+<link href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/css" rel="stylesheet" type="text/css">
+
+
+
+
+<link href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/css" rel="stylesheet" type="text/css">
+
+
+
+<style type="text/css" media="all">
+
+/* Body Font face */
+body {
+	
+  	font-family: 'Source Sans Pro', sans-serif;
+  	;
+   }
+
+   h1.textlogo {
+   	
+  	font-family: 'Source Sans Pro', sans-serif;
+  	;
+}
+
+/* Headings Font face */
+h1,h2,h3,h4,h5,h6, .main h1, #intro {
+	
+	font-family: 'Source Sans Pro', sans-serif;
+	;
+   }
+
+</style>
+
+
+
+<!--//################################# End Custom Typography #################################//-->
+
+
+
+<!--//################################# Begin Custom Colors #################################//-->
+
+<style type="text/css" media="all">
+
+	/* Body Text Color */
+		body {
+  		color:#666659;
+    }
+	
+    /* Body Links Color */
+    	
+	/* Logo Text Color */
+		h1.textlogo a {
+		color:#43CACC;
+	}
+	
+   	/* Headings Color */
+   		h2,h3,h4,h5,h6  {
+		color:#2A2A26;
+	}
+	
+	/* Sidebar Headings Color */
+   		aside h3  {
+		color:#3F3F3A;
+	}
+	
+	/* Post Title Link Color */
+		.main article h2 a {
+    	color:#2A2A26;
+	}
+			.main article h2 a:hover {
+	    color:#43CACC;
+	}
+	
+	/* Navigation Link Color */
+		nav ul li a {
+    	color:#8C8C7B !important;
+	}
+			nav ul li a:hover,
+	nav ul li.current-menu-item a,
+	nav ul li.current-post-parent a,
+	nav ul li a:hover,
+	nav ul li.current-menu-item a,
+	nav ul li.current-post-parent a {
+		color:#FFFFFF !important;
+	}
+	
+
+</style>
+
+
+<!--//################################# End Custom Colors #################################//-->
+
+
+
+<!-- begin wp_head -->
+
+
+<!-- This site is optimized with the Yoast SEO plugin v12.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="影像地圖可以擺脫方框的排版方式、讓網頁的編排更活潑，尤其在製作EDM 的時候非常好用。本文要教你如果在響應式的網頁中也能使用影像地圖、實現響應式的影像地圖。">
+<link rel="canonical" href="http://blog.shihshih.com/responsive-image-map/">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何製作響應式的影像地圖 - 簡單究好 Simple is Best">
+<meta property="og:description" content="影像地圖可以擺脫方框的排版方式、讓網頁的編排更活潑，尤其在製作EDM 的時候非常好用。本文要教你如果在響應式的網頁中也能使用影像地圖、實現響應式的影像地圖。">
+<meta property="og:url" content="http://blog.shihshih.com/responsive-image-map/">
+<meta property="og:site_name" content="簡單究好 Simple is Best">
+<meta property="article:section" content="未分類">
+<meta property="article:published_time" content="2015-07-19T14:23:05+00:00">
+<meta property="article:modified_time" content="2016-02-22T02:32:19+00:00">
+<meta property="og:updated_time" content="2016-02-22T02:32:19+00:00">
+<meta property="og:image" content="http://blog.shihshih.com/wp-content/uploads/2015/07/image-map-upload.gif">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="影像地圖可以擺脫方框的排版方式、讓網頁的編排更活潑，尤其在製作EDM 的時候非常好用。本文要教你如果在響應式的網頁中也能使用影像地圖、實現響應式的影像地圖。">
+<meta name="twitter:title" content="如何製作響應式的影像地圖 - 簡單究好 Simple is Best">
+<meta name="twitter:image" content="http://blog.shihshih.com/wp-content/uploads/2015/07/image-map-upload.gif">
+<div class="fit-vids-style">­<style>               .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       </style></div><script type="text/javascript" async="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/recaptcha__zh_tw.js" crossorigin="anonymous" integrity="sha384-R1GIQRp0dp5D/xY/owSuKhRFV6/0X5E1WHmCD2tjVoZ2v7cRy/uIffVRAjodPUVF"></script><script async="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/analytics.js"></script><script type="application/ld+json" class="yoast-schema-graph yoast-schema-graph--main">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"http://blog.shihshih.com/#website","url":"http://blog.shihshih.com/","name":"\u7c21\u55ae\u7a76\u597d Simple is Best","potentialAction":{"@type":"SearchAction","target":"http://blog.shihshih.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"http://blog.shihshih.com/responsive-image-map/#primaryimage","url":"http://blog.shihshih.com/wp-content/uploads/2015/07/image-map-upload.gif","width":500,"height":305,"caption":"\u4e0a\u50b3\u5716\u7247"},{"@type":"WebPage","@id":"http://blog.shihshih.com/responsive-image-map/#webpage","url":"http://blog.shihshih.com/responsive-image-map/","inLanguage":"zh-TW","name":"\u5982\u4f55\u88fd\u4f5c\u97ff\u61c9\u5f0f\u7684\u5f71\u50cf\u5730\u5716 - \u7c21\u55ae\u7a76\u597d Simple is Best","isPartOf":{"@id":"http://blog.shihshih.com/#website"},"primaryImageOfPage":{"@id":"http://blog.shihshih.com/responsive-image-map/#primaryimage"},"datePublished":"2015-07-19T14:23:05+00:00","dateModified":"2016-02-22T02:32:19+00:00","author":{"@id":"http://blog.shihshih.com/#/schema/person/2c38d28a8ba69bbd02006f7ead6219d7"},"description":"\u5f71\u50cf\u5730\u5716\u53ef\u4ee5\u64fa\u812b\u65b9\u6846\u7684\u6392\u7248\u65b9\u5f0f\u3001\u8b93\u7db2\u9801\u7684\u7de8\u6392\u66f4\u6d3b\u6f51\uff0c\u5c24\u5176\u5728\u88fd\u4f5cEDM \u7684\u6642\u5019\u975e\u5e38\u597d\u7528\u3002\u672c\u6587\u8981\u6559\u4f60\u5982\u679c\u5728\u97ff\u61c9\u5f0f\u7684\u7db2\u9801\u4e2d\u4e5f\u80fd\u4f7f\u7528\u5f71\u50cf\u5730\u5716\u3001\u5be6\u73fe\u97ff\u61c9\u5f0f\u7684\u5f71\u50cf\u5730\u5716\u3002"},{"@type":["Person"],"@id":"http://blog.shihshih.com/#/schema/person/2c38d28a8ba69bbd02006f7ead6219d7","name":"Ellen","image":{"@type":"ImageObject","@id":"http://blog.shihshih.com/#authorlogo","url":"http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=96&d=mm&r=g","caption":"Ellen"},"sameAs":[]}]}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="訂閱《簡單究好 Simple is Best》» 資訊提供" href="http://blog.shihshih.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="訂閱《簡單究好 Simple is Best》» 留言的資訊提供" href="http://blog.shihshih.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="訂閱《簡單究好 Simple is Best 》»〈如何製作響應式的影像地圖〉留言的資訊提供" href="http://blog.shihshih.com/responsive-image-map/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/11\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blog.shihshih.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.16"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56760,9792,65039],[55358,56760,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="prettyphoto-css-css" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/prettyPhoto.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="jplayer-js-css" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/jplayer.css" type="text/css" media="all">
+<link rel="stylesheet" id="gglcptch-css" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/gglcptch.css" type="text/css" media="all">
+<link rel="stylesheet" id="easy-responsive-shortcodes-css" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/easy-responsive-shortcodes.css" type="text/css" media="all">
+<link rel="stylesheet" id="gca-column-styles-css" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/gca-column-styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="prism-theme-css" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/prism-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="column-styles-css" href="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/wen-style.css" type="text/css" media="all">
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/jquery.js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+<link rel="https://api.w.org/" href="http://blog.shihshih.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.shihshih.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.shihshih.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.16">
+<link rel="shortlink" href="http://blog.shihshih.com/?p=268">
+<link rel="alternate" type="application/json+oembed" href="http://blog.shihshih.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblog.shihshih.com%2Fresponsive-image-map%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://blog.shihshih.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fblog.shihshih.com%2Fresponsive-image-map%2F&amp;format=xml">
+<style type="text/css" id="Responsive_Column_Widgets_1.2.1">
+            .responsive_column_widgets_box .widget {
+                padding: 4px;
+                width: auto;
+                height: auto;
+            }
+
+            .responsive_column_widgets_column_hide {
+                display: none !important;
+            }
+            
+            /* REMOVE MARGINS AS ALL GO FULL WIDTH AT 240 PIXELS */
+            @media only screen and (max-width: 240px) {
+                .responsive_column_widgets_column { 
+                    margin: 1% 0 1% 0;
+                }
+            }
+            
+            /*  GROUPING  ============================================================================= */
+            .responsive_column_widgets_box:before,
+            .responsive_column_widgets_box:after {
+                content: '';
+                display: table;
+            }
+            .responsive_column_widgets_box:after {
+                clear:both;
+            }
+            .responsive_column_widgets_box {
+                float: none;
+                width: 100%;        
+                margin-left: auto;
+                margin-right: auto;
+                zoom:1; /* For IE 6/7 (trigger hasLayout) */
+            }
+
+            /* GRID COLUMN SETUP  */
+            .responsive_column_widgets_column {
+                display: block;
+                float: left;
+                margin: 1% 0 1% 1.6%;                
+            }     
+            
+            /* all browsers except IE6 and lower */
+            .responsive_column_widgets_column:first-child { 
+                margin-left: 0; 
+            }
+            
+            /* 
+             * Remove the left margin of the first column. This should be done after all setting margins of columns for IE8. 
+             * If declared earlier and there is a rule setting left margin of first columns, then it takes effect instead in IE8.
+             */
+            .responsive_column_widgets_column_1 {
+                margin-left: 0px;
+                clear: left;
+            }            
+            
+            /*  GRID  ============================================================================= */
+            .element_of_1 { width: 100%; }
+            .element_of_2 { width: 49.2%; }
+            .element_of_3 { width: 32.2%; }
+            .element_of_4 { width: 23.8%; }
+            .element_of_5 { width: 18.72%; }
+            .element_of_6 { width: 15.33%; }
+            .element_of_7 { width: 12.91%; }
+            .element_of_8 { width: 11.1%; }
+            .element_of_9 { width: 9.68%; }
+            .element_of_10 { width: 8.56%; }
+            .element_of_11 { width: 7.63%; }
+            .element_of_12 { width: 6.86%; }
+            
+            /*  GRID for Col-spans ============================================================================= */
+             .element_2_of_2 { width: 100%; }
+ .element_2_of_3 { width: 66%; }
+ .element_3_of_3 { width: 100%; }
+ .element_2_of_4 { width: 49.2%; }
+ .element_3_of_4 { width: 74.6%; }
+ .element_4_of_4 { width: 100%; }
+ .element_2_of_5 { width: 39.04%; }
+ .element_3_of_5 { width: 59.36%; }
+ .element_4_of_5 { width: 79.68%; }
+ .element_5_of_5 { width: 100%; }
+ .element_2_of_6 { width: 32.26%; }
+ .element_3_of_6 { width: 49.19%; }
+ .element_4_of_6 { width: 66.12%; }
+ .element_5_of_6 { width: 83.05%; }
+ .element_6_of_6 { width: 100%; }
+ .element_2_of_7 { width: 27.42%; }
+ .element_3_of_7 { width: 41.93%; }
+ .element_4_of_7 { width: 56.44%; }
+ .element_5_of_7 { width: 70.95%; }
+ .element_6_of_7 { width: 85.46%; }
+ .element_7_of_7 { width: 100%; }
+ .element_2_of_8 { width: 23.8%; }
+ .element_3_of_8 { width: 36.5%; }
+ .element_4_of_8 { width: 49.2%; }
+ .element_5_of_8 { width: 61.9%; }
+ .element_6_of_8 { width: 74.6%; }
+ .element_7_of_8 { width: 87.3%; }
+ .element_8_of_8 { width: 100%; }
+ .element_2_of_9 { width: 20.96%; }
+ .element_3_of_9 { width: 32.24%; }
+ .element_4_of_9 { width: 43.52%; }
+ .element_5_of_9 { width: 54.8%; }
+ .element_6_of_9 { width: 66.08%; }
+ .element_7_of_9 { width: 77.36%; }
+ .element_8_of_9 { width: 88.64%; }
+ .element_9_of_9 { width: 100%; }
+ .element_2_of_10 { width: 18.72%; }
+ .element_3_of_10 { width: 28.88%; }
+ .element_4_of_10 { width: 39.04%; }
+ .element_5_of_10 { width: 49.2%; }
+ .element_6_of_10 { width: 59.36%; }
+ .element_7_of_10 { width: 69.52%; }
+ .element_8_of_10 { width: 79.68%; }
+ .element_9_of_10 { width: 89.84%; }
+ .element_10_of_10 { width: 100%; }
+ .element_2_of_11 { width: 16.86%; }
+ .element_3_of_11 { width: 26.09%; }
+ .element_4_of_11 { width: 35.32%; }
+ .element_5_of_11 { width: 44.55%; }
+ .element_6_of_11 { width: 53.78%; }
+ .element_7_of_11 { width: 63.01%; }
+ .element_8_of_11 { width: 72.24%; }
+ .element_9_of_11 { width: 81.47%; }
+ .element_10_of_11 { width: 90.7%; }
+ .element_11_of_11 { width: 100%; }
+ .element_2_of_12 { width: 15.32%; }
+ .element_3_of_12 { width: 23.78%; }
+ .element_4_of_12 { width: 32.24%; }
+ .element_5_of_12 { width: 40.7%; }
+ .element_6_of_12 { width: 49.16%; }
+ .element_7_of_12 { width: 57.62%; }
+ .element_8_of_12 { width: 66.08%; }
+ .element_9_of_12 { width: 74.54%; }
+ .element_10_of_12 { width: 83%; }
+ .element_11_of_12 { width: 91.46%; }
+ .element_12_of_12 { width: 100%; }
+            
+            /* Responsive Column Widget Box Widget */
+            .widget_box_widget .responsive_column_widgets_box {
+                margin-top: 0px;
+            }
+            .responsive_column_widgets_column.widget_box_widget { 
+                margin-top: 0px;
+                margin-left: 0px;
+            }
+            
+            /* Twenty Thirteen support */
+            .site-main .responsive_column_widgets_box.widget-area {
+                width: 100%;
+                margin-right: auto;
+                float: none;
+            }
+            .widget_box_widget div.widget {
+                background:none;
+            }            
+            
+            /* Twenty Fourteen Support */
+            .responsive_column_widgets_box.content-sidebar {
+                padding: 0;
+            }
+        </style>
+<style type="text/css" id="style_custom_responsive_column_widgets_83c3fa2a7e0291cfb4fc287ad856e660">.responsive_column_widgets { display: inline-block; width: 100%; }</style>
+<style type="text/css" class="style_responsive_column_widgets_83c3fa2a7e0291cfb4fc287ad856e660">@media only screen and (min-width: 1px) and (max-width: 600px) {
+.responsive_column_widgets .responsive_column_widgets_column {                
+                margin-left: 1.6%;
+            }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_1 { width:100%; clear: left; margin: 1% 0 1% 0; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_2 { width:49.2%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_3 { width:32.2%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_4 { width:23.8%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_5 { width:18.72%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_6 { width:15.33%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_7 { width:12.91%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_8 { width:11.1%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_9 { width:9.68%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_10 { width:8.56%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_11 { width:7.63%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_of_12 { width:6.86%; display: block; float:left; } 
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_2 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_3 { width: 66%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_3 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_4 { width: 49.2%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_4 { width: 74.6%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_4 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_5 { width: 39.04%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_5 { width: 59.36%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_5 { width: 79.68%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_5_of_5 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_6 { width: 32.26%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_6 { width: 49.19%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_6 { width: 66.12%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_5_of_6 { width: 83.05%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_6_of_6 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_7 { width: 27.42%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_7 { width: 41.93%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_7 { width: 56.44%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_5_of_7 { width: 70.95%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_6_of_7 { width: 85.46%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_7_of_7 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_8 { width: 23.8%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_8 { width: 36.5%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_8 { width: 49.2%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_5_of_8 { width: 61.9%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_6_of_8 { width: 74.6%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_7_of_8 { width: 87.3%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_8_of_8 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_9 { width: 20.96%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_9 { width: 32.24%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_9 { width: 43.52%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_5_of_9 { width: 54.8%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_6_of_9 { width: 66.08%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_7_of_9 { width: 77.36%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_8_of_9 { width: 88.64%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_9_of_9 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_10 { width: 18.72%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_10 { width: 28.88%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_10 { width: 39.04%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_5_of_10 { width: 49.2%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_6_of_10 { width: 59.36%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_7_of_10 { width: 69.52%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_8_of_10 { width: 79.68%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_9_of_10 { width: 89.84%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_10_of_10 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_11 { width: 16.86%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_11 { width: 26.09%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_11 { width: 35.32%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_5_of_11 { width: 44.55%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_6_of_11 { width: 53.78%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_7_of_11 { width: 63.01%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_8_of_11 { width: 72.24%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_9_of_11 { width: 81.47%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_10_of_11 { width: 90.7%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_11_of_11 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_2_of_12 { width: 15.32%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_3_of_12 { width: 23.78%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_4_of_12 { width: 32.24%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_5_of_12 { width: 40.7%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_6_of_12 { width: 49.16%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_7_of_12 { width: 57.62%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_8_of_12 { width: 66.08%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_9_of_12 { width: 74.54%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_10_of_12 { width: 83%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_11_of_12 { width: 91.46%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_element_12_of_12 { width: 100%; }
+ .responsive_column_widgets .responsive_column_widgets_column_600_1 { 
+                    clear: left; 
+                    margin-left: 0px; 
+                } 
+                
+ .responsive_column_widgets .responsive_column_widgets_column_600_hide { display: none; } 
+}
+@media only screen and (min-width: 602px) {
+            .responsive_column_widgets .responsive_column_widgets_column.responsive_column_widgets_column_1 {
+                margin-left: 0px;
+            }
+        }
+</style><link rel="shortcut icon" href="http://blog.shihshih.com/wp-content/uploads/2015/03/icon1.png" type="image/ico">
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		
+<!-- end wp_head -->
+
+<script>
+ga('send','pageview',{'dimension1':' uncategorized '});</script></head>
+
+<!-- end head -->
+
+
+
+	<body class="post-template-default single single-post postid-268 single-format-standard">
+
+
+
+		<!--[if lt IE 7]>
+
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+
+        <![endif]-->
+
+
+
+		<div class="main-container">
+
+
+
+			<!-- begin header_container -->
+
+			<div class="header_container_fixed">
+
+
+
+				<!-- begin header -->
+
+				<header class="wrapper clearfix">
+
+
+
+					<!-- begin logo -->
+
+					<h1 class="logo" title="簡單究好 Simple is Best">
+
+						<a href="http://blog.shihshih.com/">
+
+
+
+	                    
+
+
+                            <img src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/logo1.png" alt="簡單究好 Simple is Best" class="styled">
+						
+
+
+                    	</a>
+
+					</h1>
+
+					<h2 class="description">網頁前端開發資訊</h2>
+
+					<!-- end logo -->
+
+
+
+               		<div class="mini_divider"></div>
+
+
+
+               		<!-- begin main navigation -->
+
+                    
+	                
+	                  
+<ul id="menu-mainmenu" class="menu">
+	<li class="cat-item cat-item-4"><a href="http://blog.shihshih.com/category/css/">CSS</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://blog.shihshih.com/category/html/">HTML</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://blog.shihshih.com/category/sass/">Sass</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://blog.shihshih.com/category/uncategorized/">未分類</a>
+</li>
+  
+</ul>
+	                <!-- end main navigation -->
+
+
+
+	                
+
+
+	                 <div class="mini_divider"></div>
+
+
+
+	                <!-- begin search form -->
+
+	                	<div class="search_box">
+	<form method="get" id="searchform" action="http://blog.shihshih.com/">
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+	</form>
+</div>
+
+                	<!-- end search form -->
+
+
+
+	                <div class="mini_divider"></div>
+
+
+
+	            </header>
+
+	            <!-- end header -->
+
+
+
+	         </div>
+
+        	<!-- end header_container -->
+
+
+
+
+
+        <!-- begin main -->
+
+        <div class="main wrapper clearfix">
+				<!-- featured article -->
+		        <div class="topbar"> </div>
+       			<!-- featured article -->
+
+	   			<!-- .main_content-->
+                <div class="main_content">
+
+	       			<!-- section content -->
+		            <section class="content">
+
+		            		
+		                    <!-- standart article -->
+		                    <article class="post-268 post type-post status-publish format-standard hentry category-uncategorized">
+
+		                        <h2><span class="post_title_icon"></span><a href="http://blog.shihshih.com/responsive-image-map/">如何製作響應式的影像地圖</a></h2>
+
+		                    	<!-- postmeta -->
+		                    	<div class="postmeta">
+		                        	<span><i class="fa fa-clock-o"></i> 7 月 19, 2015</span>
+		                        	<span><i class="fa fa-user"></i> Posted by Ellen</span>
+		                        	<span><i class="fa fa-bookmark"></i> <a href="http://blog.shihshih.com/category/uncategorized/">未分類</a></span>
+		                        	<span><i class="fa fa-comments"></i> <a href="http://blog.shihshih.com/responsive-image-map/#comments"> 20 comments</a></span>
+		                        </div>
+		                        <!-- postmeta -->
+
+		                         <!-- entry-content -->
+		                         <div class="entry-content clearfix">
+		                         <div class="entry-colors"><div class="color_col_1"></div><div class="color_col_2"></div><div class="color_col_3"></div></div>
+
+										
+										<div class="icon">
+
+											
+											<i class="fa fa-pencil fa-2x"></i>
+
+
+										</div>
+
+											
+										
+										<p>影像地圖一直就是前端工程師的夢魘，如果不借助視覺化的工具軟體、實在很難完成影像地圖。若是想要把影像地圖做成響應式的內容呢？呵呵、別傷腦筋了，求助於工具吧。這篇文章將要教你如何使用免費工具完成響應式的影像地圖。<span id="more-268"></span></p>
+<h2>製作影像地圖</h2>
+<p>雖然使用Dreamweaver可以很快製作出影像地圖、但一套Dreamweaver可不便宜，真的要為了這難得用到的功能砸錢去買一套嗎？其實網路上有很多免費的線上工具、可以幫助我們編輯影像地圖。這裡我們要介紹 <a title="線上編輯影像地圖的工具" href="https://www.image-maps.com/" target="_blank">Image Map Tool</a>、跟大家分享如何使用image map tool 編輯影像地圖。</p>
+<h3>上傳圖片</h3>
+<ol>
+<li>進入image-maps網站後開始上傳圖片，也可以先將圖片上傳到伺服器之後再提供圖片的位址。</li>
+<li>圖片上傳完成後、底下出現預覽圖、這時候點下 click to continue 進入編輯畫面。</li>
+<li>進入編輯畫面後、右上角出現黃色底的提示文字。”在圖片上按右鍵開啟選單、如果是Mac電腦則使用 control + click 開啟選單”。</li>
+<li>關閉提示文字之後、就可以開始編輯影像地圖。</li>
+</ol>
+<p><img class="alignnone size-full wp-image-269" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/image-map-upload.gif" alt="上傳圖片" width="500" height="305"></p>
+<h3>畫矩形框</h3>
+<ol>
+<li>按下右鍵、當彈出選單之後選擇Create Rect。</li>
+<li>調整矩形框的大小並將矩形框移動到想要的位置。</li>
+<li>設定連結的相關資訊。</li>
+</ol>
+<p><img class="alignnone size-full wp-image-270" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/image-map-create-rect.gif" alt="畫矩形框" width="500" height="305"></p>
+<h3>畫任意形狀</h3>
+<ol>
+<li>按下右鍵、當彈出選單之後選擇Create Poly。</li>
+<li>延著圖形的外框點按滑鼠左鍵、將圖形圍繞起來。</li>
+<li>設定連結的相關資訊。</li>
+</ol>
+<p><img class="alignnone size-full wp-image-271" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/image-map-create-poly.gif" alt="畫任意形狀" width="500" height="305"></p>
+<h3>畫圓形</h3>
+<ol>
+<li>按下右鍵、當彈出選單之後選擇Create Circle。</li>
+<li>在圓心的位置按下滑鼠左鍵、產生圓心座標並儲存。</li>
+<li>在圓週的任意點上按下滑鼠左鍵、產生圓半徑的數字之後儲存。此時已經畫好圓形框。</li>
+<li>在畫好的圓形框上按滑鼠左鍵、叫出連結的設定視窗。設定連結的相關資訊。</li>
+</ol>
+<p><img class="alignnone size-full wp-image-272" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/image-map-create-circle.gif" alt="畫圓形" width="500" height="290"></p>
+<h3>預覽影像地圖</h3>
+<ol>
+<li>按下右鍵、當彈出選單之後選擇Get Code。</li>
+<li>點選HTML OutPut、預覽影像地圖的結果。</li>
+</ol>
+<p><img class="alignnone size-full wp-image-273" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/image-map-html-output.gif" alt="預覽影像地圖" width="500" height="305"></p>
+<h3>取回影像地圖的代碼</h3>
+<ol>
+<li>點選HTML Code、將視窗滾到最底下。</li>
+<li>複製HTML Image Map Code欄位中的程式碼。</li>
+<li>將取回的程式碼貼在網頁的&lt;body&gt;之中。</li>
+</ol>
+<p><img class="alignnone size-full wp-image-274" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/image-map-get-html-code.gif" alt="取回影像地圖的代碼" width="500" height="305"></p>
+<h2>響應式的影像地圖</h2>
+<p>製作好的影像地圖並不具有響應式的特性。當圖片隨著視窗改變大小時、具有連結作用的區塊並沒有跟著改變。</p>
+<p><img class="alignnone size-full wp-image-276" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/image-map-demo.gif" alt="製作好的影像地圖並不具有響應式的特性" width="500" height="300"></p>
+<h3>jQuery-rwdImageMaps</h3>
+<p>想要讓影像地圖具有響應式的效果、只要加上jQuery-rwdImageMaps就可以了。</p>
+<p>首先到<a href="https://github.com/stowball/jQuery-rwdImageMaps">https://github.com/stowball/jQuery-rwdImageMaps</a>去下載jQuery-rwdImageMaps。</p>
+<p><img class="alignnone wp-image-275 size-large" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/jQuery-rwdImageMaps-1024x577.png" alt="jQuery-rwdImageMaps" width="1024" height="577" srcset="http://blog.shihshih.com/wp-content/uploads/2015/07/jQuery-rwdImageMaps-1024x577.png 1024w, http://blog.shihshih.com/wp-content/uploads/2015/07/jQuery-rwdImageMaps-300x169.png 300w, http://blog.shihshih.com/wp-content/uploads/2015/07/jQuery-rwdImageMaps.png 1030w" sizes="(max-width: 1024px) 100vw, 1024px"></p>
+<p>將下載回來的zip檔解壓縮、會得到jquery.rwdImageMaps.js及jquery.rwdImageMaps.min.js二支js。這二支js我們只要選擇一支使用就可以了。</p>
+<p>接著我們來調整影像地圖的HTML。</p>
+<p>載入jQuery及剛下載回來的jQuery-rwdImageMaps。</p>
+<pre class=" language-markup"><code class=" language-markup"><span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jquery.rwdImageMaps.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre>
+<p>設定所有使用到影像地圖的圖片都套用jQuery-rwdImageMaps。</p>
+<pre class=" language-markup"><code class=" language-markup"><span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'img[usemap]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rwdImageMaps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre>
+<p>這樣子我們就得到具有響應式效果的影像地圖了哦。</p>
+<p><img class="alignnone size-full wp-image-277" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/responsive-image-map.gif" alt="具有響應式效果的影像地圖" width="500" height="300"></p>
+
+	                            </div>
+	                            <!-- entry-content -->
+
+		                    </article>
+		                    <!-- standart article -->
+
+		                    
+		                    
+<!-- You can start editing here. -->
+
+
+	<div id="comments">
+		<h3><span>20</span> Comments</h3>
+		<ul class="commentlist">
+				<li class="comment even thread-even depth-1">
+		<article id="comment-59">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/0bb62af9330936f04e599cb69a7d6cb1.png" srcset="http://0.gravatar.com/avatar/0bb62af9330936f04e599cb69a7d6cb1?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-59" onclick="return addComment.moveForm( &quot;comment-59&quot;, &quot;59&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「LEE」">回覆</a>				<cite class="fn"><a href="https://www/" rel="external nofollow" class="url">LEE</a></cite> |
+				<time datetime="2016-07-26"><a href="http://blog.shihshih.com/responsive-image-map/#comment-59">7 月 26th, 2016 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>您好 我是個沒學過網頁設計的新手<br>
+照著步驟做到jQuery-rwdImageMaps那邊就不懂了<br>
+東西載了 不知道怎麼開<br>
+有把檔案拖進GOOGLE裡<br>
+出現一堆字碼  也不會應用<br>
+請問我如何應用到自己的影像地圖呢？<br>
+謝謝您</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor odd alt depth-2">
+		<article id="comment-136">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-136" onclick="return addComment.moveForm( &quot;comment-136&quot;, &quot;136&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2017-06-28"><a href="http://blog.shihshih.com/responsive-image-map/#comment-136">6 月 28th, 2017 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>您的HTML檔應該長得像這樣：</p>
+<pre>&lt;html&gt;
+&lt;head&gt;
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="jquery.rwdImageMaps.js"&gt;&lt;/script&gt;
+&lt;script&gt; 
+$(document).ready(function(e) { 
+$('img[usemap]').rwdImageMaps(); 
+});
+&lt;/script&gt;
+&lt;title&gt;網頁標題&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt; //取回的影像地圖代碼&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1">
+		<article id="comment-60">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/da4ebd9b96cddace6a54ff75d760b4f3.png" srcset="http://1.gravatar.com/avatar/da4ebd9b96cddace6a54ff75d760b4f3?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-60" onclick="return addComment.moveForm( &quot;comment-60&quot;, &quot;60&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「lisa」">回覆</a>				<cite class="fn">lisa</cite> |
+				<time datetime="2016-08-2"><a href="http://blog.shihshih.com/responsive-image-map/#comment-60">8 月 2nd, 2016 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>    $(document).ready(function(e) {<br>
+        $(‘img[usemap]’).rwdImageMaps();<br>
+    });</p>
+<p>請問這段要貼在哪裡呢?謝謝!!</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor odd alt depth-2">
+		<article id="comment-135">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-135" onclick="return addComment.moveForm( &quot;comment-135&quot;, &quot;135&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2017-06-28"><a href="http://blog.shihshih.com/responsive-image-map/#comment-135">6 月 28th, 2017 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>如果您是寫在html檔裡，那就把</p>
+<pre>&lt;script&gt;<br> $(document).ready(function(e) {<br> $('img[usemap]').rwdImageMaps();<br> });<br>&lt;/script&gt;
+</pre>
+<p>貼在</p>
+<pre>&lt;script src="jquery.rwdImageMaps.js"&gt;&lt;/script&gt; 底下就可以了。</pre>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1">
+		<article id="comment-108">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/d5ba1573990fc028acded63af51c3d01.png" srcset="http://1.gravatar.com/avatar/d5ba1573990fc028acded63af51c3d01?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-108" onclick="return addComment.moveForm( &quot;comment-108&quot;, &quot;108&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「zhou bin」">回覆</a>				<cite class="fn"><a href="http://www.bingooh.com/" rel="external nofollow" class="url">zhou bin</a></cite> |
+				<time datetime="2017-05-31"><a href="http://blog.shihshih.com/responsive-image-map/#comment-108">5 月 31st, 2017 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>好文啊 学习了</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-759">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/b983d73ca604748faff19c2a5e4323a3.png" srcset="http://2.gravatar.com/avatar/b983d73ca604748faff19c2a5e4323a3?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-759" onclick="return addComment.moveForm( &quot;comment-759&quot;, &quot;759&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「ryan」">回覆</a>				<cite class="fn">ryan</cite> |
+				<time datetime="2018-03-15"><a href="http://blog.shihshih.com/responsive-image-map/#comment-759">3 月 15th, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>您好，<br>
+剛剛照著做了<br>
+程式碼也放了<br>
+為什麼響應式的部分還是沒反應<br>
+麻煩請教 謝謝</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor even depth-2">
+		<article id="comment-1399">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1399" onclick="return addComment.moveForm( &quot;comment-1399&quot;, &quot;1399&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2018-07-31"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1399">7 月 31st, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>要給我網頁的連結才能幫你看是什麼原因。</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1">
+		<article id="comment-788">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/278c25c2c87fe848d1283eece34016a6.png" srcset="http://2.gravatar.com/avatar/278c25c2c87fe848d1283eece34016a6?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-788" onclick="return addComment.moveForm( &quot;comment-788&quot;, &quot;788&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Jaimee」">回覆</a>				<cite class="fn"><a href="http://blog.tcfst.org.tw/edm/10526/ASVBigData/03.html" rel="external nofollow" class="url">Jaimee</a></cite> |
+				<time datetime="2018-03-22"><a href="http://blog.shihshih.com/responsive-image-map/#comment-788">3 月 22nd, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>照著步驟下載了jQuery-rwdImageMaps<br>
+之後就看不懂如何操作了?<br>
+不知道從哪裡載入，怎麼載入?<br>
+要怎麼”設定所有使用到影像地圖的圖片都套用jQuery-rwdImageMaps”呢?</p>
+<p>謝謝您</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor even depth-2">
+		<article id="comment-1404">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1404" onclick="return addComment.moveForm( &quot;comment-1404&quot;, &quot;1404&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2018-07-31"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1404">7 月 31st, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<pre class=" language-markup"><code class=" language-markup"><span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'img[usemap]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rwdImageMaps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-1397">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/191dcc0652c5f1a3aad2d88abb591dca.png" srcset="http://1.gravatar.com/avatar/191dcc0652c5f1a3aad2d88abb591dca?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1397" onclick="return addComment.moveForm( &quot;comment-1397&quot;, &quot;1397&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「WunShuai」">回覆</a>				<cite class="fn">WunShuai</cite> |
+				<time datetime="2018-07-31"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1397">7 月 31st, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>你好 請問上述的教學 須貼在哪一個編輯器比較合適 我使用了google site 但是載入的圖片並不會隨著是窗大小跟著改變<br>
+使用word press 但是載入 jQuery-rwdImageMaps 的指令word press不接受</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor even depth-2">
+		<article id="comment-1398">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1398" onclick="return addComment.moveForm( &quot;comment-1398&quot;, &quot;1398&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2018-07-31"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1398">7 月 31st, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>儘量使用純文字編輯器，如果是wordpress 要切換到文字編輯模式。</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1">
+		<article id="comment-1405">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/2103b596adb8ab03ba5abf7778069ec7.png" srcset="http://2.gravatar.com/avatar/2103b596adb8ab03ba5abf7778069ec7?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1405" onclick="return addComment.moveForm( &quot;comment-1405&quot;, &quot;1405&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「andy」">回覆</a>				<cite class="fn">andy</cite> |
+				<time datetime="2018-08-2"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1405">8 月 2nd, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>您好不好意思，我是第一次製作網頁的新手，想請問為甚麼響應式效果一直做不出來呢?<br>
+我照著</p>
+<p>$(document).ready(function(e) {<br>
+$(‘img[usemap]’).rwdImageMaps();<br>
+});</p>
+<p>網頁標題</p>
+<p> //取回的影像地圖代碼</p>
+<p>這個部分，將語法貼在css內<br>
+但響應式這個部分一直沒辦法成功<br>
+我是使用wordpress來製作的</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor even depth-2">
+		<article id="comment-1473">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1473" onclick="return addComment.moveForm( &quot;comment-1473&quot;, &quot;1473&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2019-05-17"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1473">5 月 17th, 2019 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<pre class=" language-javascript"><code class=" language-javascript">    <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'img[usemap]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rwdImageMaps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>這串是javascript，不能貼在css裡。<br>
+可以使用wordpress 的編輯器把底下這段貼進內容裡：</p>
+<pre class=" language-markup"><code class=" language-markup"><span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jquery.rwdImageMaps.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'img[usemap]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rwdImageMaps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+//取回的影像地圖代碼放這裡
+</code></pre>
+<p>記得要確認網站有載入jquery哦。</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-1406">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/6069b011ffd42fb28940643486d3d8f3.png" srcset="http://0.gravatar.com/avatar/6069b011ffd42fb28940643486d3d8f3?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1406" onclick="return addComment.moveForm( &quot;comment-1406&quot;, &quot;1406&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「andy」">回覆</a>				<cite class="fn">andy</cite> |
+				<time datetime="2018-08-2"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1406">8 月 2nd, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>您好不好意思，我是個新手，我使用wordpress依照您的步驟做下來，<br>
+但最後卻無法成功響應式<br>
+我將</p>
+<p>$(document).ready(function(e) {<br>
+$(‘img[usemap]’).rwdImageMaps();<br>
+});</p>
+<p>網頁標題</p>
+<p> //取回的影像地圖代碼</p>
+<p>這段貼在html的語法框內<br>
+雖然有圖片但無法跟著視窗改變按鈕位置<br>
+想請教哪邊出了問題呢?</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor even depth-2">
+		<article id="comment-1472">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1472" onclick="return addComment.moveForm( &quot;comment-1472&quot;, &quot;1472&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2019-05-16"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1472">5 月 16th, 2019 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>要確認jquery和jquery.rwdImageMaps.js都有載入到頁面裡面。</p>
+<pre class=" language-markup"><code class=" language-markup"><span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>jquery.rwdImageMaps.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+<span class="token script language-javascript"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span>
+    <span class="token function">$</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">ready</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'img[usemap]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rwdImageMaps</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></span>
+</code></pre>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1">
+		<article id="comment-1412">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/40ce856f26e819479a1e6dac99c6270d.png" srcset="http://1.gravatar.com/avatar/40ce856f26e819479a1e6dac99c6270d?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1412" onclick="return addComment.moveForm( &quot;comment-1412&quot;, &quot;1412&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「jing」">回覆</a>				<cite class="fn">jing</cite> |
+				<time datetime="2018-09-13"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1412">9 月 13th, 2018 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>感謝分享!!</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor even depth-2">
+		<article id="comment-1470">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1470" onclick="return addComment.moveForm( &quot;comment-1470&quot;, &quot;1470&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2019-05-16"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1470">5 月 16th, 2019 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>請慢用 ^^</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1">
+		<article id="comment-1430">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/aefed6a125d5431517162a101034a773.png" srcset="http://1.gravatar.com/avatar/aefed6a125d5431517162a101034a773?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1430" onclick="return addComment.moveForm( &quot;comment-1430&quot;, &quot;1430&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「牛哥」">回覆</a>				<cite class="fn">牛哥</cite> |
+				<time datetime="2019-02-27"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1430">2 月 27th, 2019 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>您好，<br>
+依照教學做了，程式碼也放了<br>
+響應式的部分還是沒反應<br>
+可以指導一下嗎？</p>
+<p>謝謝</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+<ul class="children">
+	<li class="comment byuser comment-author-ellen bypostauthor even depth-2">
+		<article id="comment-1474">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/a9cb18319790cae53bf4a8fc8eaf2c23.png" srcset="http://1.gravatar.com/avatar/a9cb18319790cae53bf4a8fc8eaf2c23?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1474" onclick="return addComment.moveForm( &quot;comment-1474&quot;, &quot;1474&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Ellen」">回覆</a>				<cite class="fn">Ellen</cite> |
+				<time datetime="2019-05-17"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1474">5 月 17th, 2019 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>要有連結給我才能幫你找原因哦。</p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1">
+		<article id="comment-1432">
+			<header class="comment-author vcard">
+				<img alt="" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/92970528b08de4b26d63fa75878dc135.png" srcset="http://0.gravatar.com/avatar/92970528b08de4b26d63fa75878dc135?s=100&amp;d=mm&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50">        <a rel="nofollow" class="comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#comment-1432" onclick="return addComment.moveForm( &quot;comment-1432&quot;, &quot;1432&quot;, &quot;respond&quot;, &quot;268&quot; )" aria-label="回覆給「Airy」">回覆</a>				<cite class="fn"><a href="http://www.by37.org/" rel="external nofollow" class="url">Airy</a></cite> |
+				<time datetime="2019-03-2"><a href="http://blog.shihshih.com/responsive-image-map/#comment-1432">3 月 2nd, 2019 </a></time>
+							</header>
+
+			<section class="comment_content">
+				<p>謝謝，已成功，簡單又受用  <img draggable="false" class="emoji" alt="😀" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/1f600.svg"></p>
+
+			</section>
+      
+		</article>
+    <!-- </li> is added by wordpress automatically -->
+</li><!-- #comment-## -->
+		</ul>
+	</div>
+
+	
+
+
+<section id="respond" class="respond-form">
+
+	<div id="comment-form-title"><h3>Post a comment</h3></div>
+
+	<div id="cancel-comment-reply">
+		<p class="small"><a rel="nofollow" id="cancel-comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#respond" style="display:none;">點擊這裡以取消回覆</a></p>
+	</div>
+
+	
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">發佈留言 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://blog.shihshih.com/responsive-image-map/#respond" style="display:none;">取消回覆</a></small></h3>			<form action="http://blog.shihshih.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes"><span id="email-notes">發佈留言必須填寫的電子郵件地址不會公開。</span> 必填欄位標示為 <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">留言</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">顯示名稱 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">電子郵件地址 <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">個人網站網址</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200"></p>
+<div class="gglcptch gglcptch_v2"><div id="gglcptch_recaptcha_1416461622" class="gglcptch_recaptcha"></div>
+				<noscript>
+					<div style="width: 302px;">
+						<div style="width: 302px; height: 422px; position: relative;">
+							<div style="width: 302px; height: 422px; position: absolute;">
+								<iframe src="https://www.google.com/recaptcha/api/fallback?k=6LePAlIUAAAAAJlUz8TUvN1DRUCv6D8OKeCU1e33" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;"></iframe>
+							</div>
+						</div>
+						<div style="border-style: none; bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px; background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px; height: 60px; width: 300px;">
+							<textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px !important; height: 40px !important; border: 1px solid #c1c1c1 !important; margin: 10px 25px !important; padding: 0px !important; resize: none !important;"></textarea>
+						</div>
+					</div>
+				</noscript></div><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="發佈留言"> <input type="hidden" name="comment_post_ID" value="268" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>			</form>
+			</div><!-- #respond -->
+	
+	</section>
+
+
+	                </section>
+	                <!-- section content -->
+
+				<!-- begin #pagination -->
+						    	<!-- end #pagination -->
+
+			
+			
+			
+<!-- begin aside -->
+<aside>
+
+    	<!-- Sidebar Widgets Area -->
+            <div id="search-2" class="widget_sidebar widget_search"><div class="search_box">
+	<form method="get" id="searchform" action="http://blog.shihshih.com/">
+		<input type="text" class="field" name="s" id="s" placeholder="Search">
+	</form>
+</div>
+</div>		<div id="recent-posts-2" class="widget_sidebar widget_recent_entries">		<h3 class="widget-title">近期文章</h3>		<ul>
+											<li>
+					<a href="http://blog.shihshih.com/how-to-disable-zoom-in-when-focusing-on-the-input-box-on-mobile/">如何在行動裝置上避免點擊輸入框時畫面放大</a>
+									</li>
+											<li>
+					<a href="http://blog.shihshih.com/javascript-image-dropdown-menu/">使用ms-Dropdown美化你的下拉選單</a>
+									</li>
+											<li>
+					<a href="http://blog.shihshih.com/window-width-not-the-same-as-media-query/">解決JavaScript和CSS媒體查詢取得的視窗寬度不同的問題</a>
+									</li>
+											<li>
+					<a href="http://blog.shihshih.com/twitter-bootstrap-carousel-hide-left-and-right-arrows-if-only-one-slider-is-present/">Bootstrap 輪播器強化：當只有一張幻燈片時、關閉換頁箭頭及按鈕</a>
+									</li>
+											<li>
+					<a href="http://blog.shihshih.com/sass-output-charset-utf-8-to-css/">SASS: 將css的編碼設定成utf-8 – 解決中文字元的問題</a>
+									</li>
+					</ul>
+		</div><div id="recent-comments-2" class="widget_sidebar widget_recent_comments"><h3 class="widget-title">近期留言</h3><ul id="recentcomments"><li class="recentcomments">「<span class="comment-author-link">Ellen</span>」在〈<a href="http://blog.shihshih.com/how-to-use-html5-picture-element-to-achieve-responsive-image/#comment-1493">如何使用HTML5 &lt;picture&gt;實現響應式圖片</a>〉發佈留言</li><li class="recentcomments">「<span class="comment-author-link">Ellen</span>」在〈<a href="http://blog.shihshih.com/pure-css-slider/#comment-1492">如何單純使用CSS3及HTML製作圖片輪播效果</a>〉發佈留言</li><li class="recentcomments">「<span class="comment-author-link">Ellen</span>」在〈<a href="http://blog.shihshih.com/pure-css-slider/#comment-1491">如何單純使用CSS3及HTML製作圖片輪播效果</a>〉發佈留言</li><li class="recentcomments">「<span class="comment-author-link">Ellen</span>」在〈<a href="http://blog.shihshih.com/pure-css-slider/#comment-1490">如何單純使用CSS3及HTML製作圖片輪播效果</a>〉發佈留言</li><li class="recentcomments">「<span class="comment-author-link">Adam</span>」在〈<a href="http://blog.shihshih.com/pure-css-slider/#comment-1487">如何單純使用CSS3及HTML製作圖片輪播效果</a>〉發佈留言</li></ul></div><div id="archives-2" class="widget_sidebar widget_archive"><h3 class="widget-title">彙整</h3>		<ul>
+			<li><a href="http://blog.shihshih.com/2019/10/">2019 年 10 月</a></li>
+	<li><a href="http://blog.shihshih.com/2016/08/">2016 年 8 月</a></li>
+	<li><a href="http://blog.shihshih.com/2016/07/">2016 年 7 月</a></li>
+	<li><a href="http://blog.shihshih.com/2016/04/">2016 年 4 月</a></li>
+	<li><a href="http://blog.shihshih.com/2016/01/">2016 年 1 月</a></li>
+	<li><a href="http://blog.shihshih.com/2015/11/">2015 年 11 月</a></li>
+	<li><a href="http://blog.shihshih.com/2015/10/">2015 年 10 月</a></li>
+	<li><a href="http://blog.shihshih.com/2015/07/">2015 年 7 月</a></li>
+	<li><a href="http://blog.shihshih.com/2015/05/">2015 年 5 月</a></li>
+	<li><a href="http://blog.shihshih.com/2015/04/">2015 年 4 月</a></li>
+	<li><a href="http://blog.shihshih.com/2015/03/">2015 年 3 月</a></li>
+		</ul>
+		</div><div id="meta-2" class="widget_sidebar widget_meta"><h3 class="widget-title">其他操作</h3>			<ul>
+						<li><a rel="nofollow" href="http://blog.shihshih.com/wp-login.php">登入</a></li>
+			<li><a href="http://blog.shihshih.com/feed/">訂閱<abbr title="RSS 英文原文為 Really Simple Syndication，真正簡易新聞訂閱方式">網站內容 RSS 資訊提供</abbr></a></li>
+			<li><a href="http://blog.shihshih.com/comments/feed/">訂閱<abbr title="RSS 英文原文為 Really Simple Syndication，真正簡易新聞訂閱方式">網站留言 RSS 資訊提供</abbr></a></li>
+			<li><a href="https://tw.wordpress.org/" title="本站採用最先進的語意式個人出版平台 WordPress 建置。">WordPress 台灣繁體中文</a></li>			</ul>
+			</div>        <!-- END Sidebar Widgets Area -->
+	
+</aside>
+<!-- end aside -->
+        </div>
+        <!-- .main_content-->
+
+	    </div>
+	    <!-- end .main -->
+
+    </div>
+    <!-- end #main-container -->
+
+    <!-- begin footer-container -->
+    <div class="footer-container">
+		<footer class="wrapper">
+
+	<!-- social stuff -->
+    <div id="social" class="widget">
+
+                        	<a href="mailto:s%75llen%312%309@ho%74mail%2ec%6fm"><i class="fa fa-envelope fa-2"></i></a>
+            
+            
+            
+            
+            
+            
+             
+            
+            
+                        	<a href="http://blog.shihshih.com/feed/"><i class="fa fa-rss fa-2"></i></a>
+                </div>
+    <!-- end social stuff -->
+
+			<!-- begin copyright -->
+			© 2015 shihshih.com			<!-- end copyright -->
+
+											</footer>
+    </div>
+    <!-- end footer-container -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59780651-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/custom.js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/jquery.prettyPhoto.js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/jquery.fitvids.js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/custom(1).js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/prism-js.js"></script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/wp-embed.min.js"></script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var gglcptch = {"options":{"version":"v2","sitekey":"6LePAlIUAAAAAJlUz8TUvN1DRUCv6D8OKeCU1e33","theme":"light","error":"<strong>Warning<\/strong>:&nbsp;More than one reCAPTCHA has been found in the current form. Please remove all unnecessary reCAPTCHA fields to make it work properly."},"vars":{"visibility":false}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/script.js"></script>
+<script>
+ga('send','pageview',{'dimension3','未分類'});
+ga('send','pageview',{'dimension1':' 未分類 '});</script>	
+<div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./如何製作響應式的影像地圖 - 簡單究好 Simple is Best 簡單究好 Simple is Best_files/bframe.html" name="c-psxxkq9jfva9" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body></html>
