@@ -1,6 +1,6 @@
 <%- include('parts/html_head') %> 
 <div class="container">
-<form action="http://127.0.0.1:3000/login", method="POST" autocomplete="off">
+<form action="./login", method="POST" autocomplete="off">
     <div class="form-group">
       <label >Name</label>
       <input type="name" class="form-control" name='name' >
@@ -12,7 +12,7 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     <button type="reset" class="btn btn-primary">reset</button>
-    <a class="btn btn-primary" href="http://127.0.0.1:3000/registerPage">Register</a>
+    <a class="btn btn-primary" href="./registerPage">Register</a>
     <%= status %><%= loginMember %>
     
   </form>
