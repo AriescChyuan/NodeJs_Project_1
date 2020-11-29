@@ -1,0 +1,33 @@
+<%- include('../parts/html_head') %> 
+<div class="container">  
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">名稱</th>
+            <th scope="col">數值</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% for (let value of dbData){ %>  
+          <tr>
+            <th scope="row">狀態</th>
+            <td><%= value['狀態'] %></td>
+          </tr>
+          <tr>
+              <th scope="row">重量(噸)</th>
+              <td><%= value['重量(噸)'] %></td>
+          </tr>
+          <tr>
+              <th scope="row" >溫度</th>
+              <td><%= value['溫度'] %></td>
+          </tr>
+          <tr>
+              <th scope="row">濕度</th>
+              <td><%= value['濕度'] %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+</div>
+
+<%- include('../parts/html_foot') %>  

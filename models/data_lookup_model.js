@@ -6,6 +6,7 @@ module.exports = function LookUpData(table, id){
     return new Promise((resolve, reject)=>{
 
         let sql = "SELECT * FROM "+table+" WHERE id = ?";
+
         
         db.query(sql,id,function(err, results){
             if(err){
@@ -17,8 +18,8 @@ module.exports = function LookUpData(table, id){
                 return;
             }
             resolve(results)
-
         })
+        
         
     })
 }

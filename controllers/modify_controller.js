@@ -95,6 +95,10 @@ module.exports = class Member {
                 // })
                 res.render('../views/index.ejs',{status:"登入成功！",loginMember: "歡迎 "+ rows[0].name + " 的登入！"});
             }
+        }).catch((err)=>{
+            res.json({
+                results: err
+            })
         })
     
     }

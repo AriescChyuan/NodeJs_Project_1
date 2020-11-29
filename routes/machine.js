@@ -5,6 +5,6 @@ const MachineDataMethod = require('../controllers/data_controller.js');
 machineDataMethod = new MachineDataMethod();
 
 //// 取得機台資訊
-router.get('/getMachineData/:table/:id',machineDataMethod.lookupdata);
+router.get('/getMachineData/:table/:id/:isClick?/:columns?',machineDataMethod.lookupdata);
 
 module.exports = router;
