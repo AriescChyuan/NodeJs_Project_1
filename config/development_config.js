@@ -11,8 +11,6 @@ require('dotenv').config()
 //     },
 //     secret:process.env.MY_SECRET
 // }
-
-
 module.exports = {
   mysql: {
       host: 'us-cdbr-east-02.cleardb.com',
