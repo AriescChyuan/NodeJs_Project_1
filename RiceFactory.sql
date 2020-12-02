@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- 資料表結構 `ChaffArea`
 --
+USE heroku_01a96fa5657592f;
 
 CREATE TABLE `ChaffArea` (
   `Id` int(11) NOT NULL,

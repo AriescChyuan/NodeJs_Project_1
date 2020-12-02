@@ -11,3 +11,14 @@ module.exports = {
     },
     secret:process.env.MY_SECRET
 }
+
+
+module.exports = {
+  mysql: {
+      host: 'us-cdbr-east-02.cleardb.com',
+      user: 'b3f4c83c211f65',
+      password: '12a9db6e',
+      database: 'heroku_01a96fa5657592f'
+    },
+    secret:process.env.MY_SECRET
+}
