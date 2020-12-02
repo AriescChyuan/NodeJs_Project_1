@@ -10,8 +10,10 @@ const connection = mysql.createConnection({
 connection.connect(err => {
     if (err) {
       console.log('資料庫連線失敗');
+      alert('資料庫連線失敗');
     } else {
       console.log('資料庫連線成功');
+      alert('資料庫連線成功');
     }
   });
 module.exports = connection;
